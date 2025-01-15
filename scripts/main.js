@@ -46,22 +46,25 @@ myButton.addEventListener("click", () =>{
 */
 
 
+//Varible used to get the infomation from the website page
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 
-
+//The function that prompts the user to enter a name
 function setUserName() {
   const myName = prompt("Please enter your name.");
+	//If nothing is entered then it is called again
   if (!myName) {
     setUserName();
   } else {
+	  //Stores the input for the memory
     localStorage.setItem("name", myName);
     myHeading.textContent = `Mozilla is cool, ${myName}`;
   }
 }
 
 
-
+//if Nothing is called in the loa
 if (!localStorage.getItem("name")) {
   setUserName();
 } else {
