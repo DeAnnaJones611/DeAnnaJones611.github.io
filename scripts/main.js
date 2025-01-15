@@ -2,6 +2,21 @@
 	//This is to allow the user to input a name and it is printed on the screen 
 
 
+
+//This changes the images
+const myImage = document.querySelector("img");
+
+myImage.addEventListener("click", () => {
+  const mySrc = myImage.getAttribute("src");
+  if (mySrc === "images/firefox-icon.png") {
+    myImage.setAttribute("src", "images/firefox_2ndIcon.png");
+  } else {
+    myImage.setAttribute("src", "images/firefox-icon.png");
+  }
+});
+
+
+
 //Varible used to get the infomation from the website page
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
