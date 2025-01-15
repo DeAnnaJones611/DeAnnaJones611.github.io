@@ -1,49 +1,5 @@
-
-/*
-How to do the group comments
-*/
-
-//How to do a single line comment 
-
-
-/*
-This adds a personal message to the screen
-*/
-/*let myButton = document.querySelector("button");
-let myHeading = document.querySelector("h1");
-
-
-//This is used to set the name that is entered by the user 
-function setUserName(){
-	const myName = prompt("Please  enter your name.");
-
-	if(!myName){
-		setUserName();
-	}
-
-	else{
-		localStorage.setItem("name", myName);
-		myHeading.textContent = `Mozilla is cool, ${myName}`;
-	}
-}
-
-
-//If there is nothing then the user is prompted to input one 
-if(!loaclStorage.getItem("name")){
-	setUserName();
-} else{
-	const storeName = localStorage.setItem("name");
-	myHeading.textConten = `Mozilla is cool, ${storedName}`;
-
-}
-
-
-//This code is run when the button is pressed
-myButton.addEventListener("click", () =>{
-	sestUserName();
-});
-
-*/
+//This is the java script for the tutorial one 
+	//This is to allow the user to input a name and it is printed on the screen 
 
 
 //Varible used to get the infomation from the website page
@@ -64,16 +20,18 @@ function setUserName() {
 }
 
 
-//if Nothing is called in the loa
+//If nothing in local storage then calls the function
 if (!localStorage.getItem("name")) {
   setUserName();
 } else {
+
+	//Else always printing the name and text in the header 
   const storedName = localStorage.getItem("name");
   myHeading.textContent = `Mozilla is cool, ${storedName}`;
 }
 
 
-
+//Then the button is clicked then the funtion is called.
 myButton.addEventListener("click", () => {
   setUserName();
 });
