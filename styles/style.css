@@ -35,3 +35,44 @@ img{
 	margin: 0 auto;
 	max-width: 100%;
 }
+
+
+#full-img {
+	padding: 10;
+	margin: 10;
+	height: 500px;
+	width: 500px;
+}
+
+
+#full-img img{
+	position: absolute;
+	padding: 10;
+	margin: 10;
+	height: 500px;
+	width: 500px;
+	z-index: 0;
+	
+}
+
+
+#full-img button{
+	position: absolute;
+	z-index: 1;
+
+}
+
+
+
+#thumbNail{
+	display: flex;
+	flex-direction: row;
+	
+}
+
+#thumbNail img {
+	height: 90;
+	width: 20%;
+
+
+}
