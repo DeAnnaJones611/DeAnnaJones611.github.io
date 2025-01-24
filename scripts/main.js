@@ -53,6 +53,46 @@ myButton.addEventListener("click", () => {
 });
 
 
+//This is week 2 Java script
+
+
+
+const arrayImage = [ "images/pic1.png"  , "images/pic2.png" , "images/pic3.png"  , "images/pic4.png" ];
+
+let  thumbNail = document.querySelector('.thumb-bar');
+
+let imageCount = 0;
+
+for (const image of arrayImage){
+	singleImage = image;
+	let tempImage = imageCount.toString();
+	let newImage = document.createElement("img");
+	newImage.src = singleImage;
+	newImage.id =  "Image" + tempImage;
+	document.getElementById("thumbNail").appendChild(newImage);
+	imageCount+= 1;
+ 
+}
+
+const imageOne = document.querySelector("#Image0");
+imageOne.addEventListener("click", (event) => {changeImage(0)});
+
+const imageTwo = document.querySelector("#Image1");
+imageTwo.addEventListener("click", (event) => {changeImage(1)});
+
+
+const imageThree = document.querySelector("#Image2");
+imageThree.addEventListener("click", (event) => {changeImage(2)});
+
+const imageFour = document.querySelector("#Image3");
+imageFour.addEventListener("click", (event) => {changeImage(3)});
+
+
+
+function changeImage(index){
+	const mainImage = document.querySelector("#full-img img");
+	mainImage.src = arrayImage[index];
+}
 
 
 
