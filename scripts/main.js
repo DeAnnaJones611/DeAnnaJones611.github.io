@@ -96,3 +96,43 @@ function changeImage(index){
 
 
 
+//This isn't working correct 
+	//Only changing the word to dark to light, but not the way back
+const mainButton = document.querySelector("#full-img button");
+
+let buttonType = mainButton.getAttribute("class");
+
+
+if (buttonType === "light"){
+	mainButton.addEventListener("click", (event) => {lightChange()});
+}
+
+if(buttonType === "dark"){
+	mainButton.addEventListener("click", (event) => {darkChange()});
+}
+
+
+
+function lightChange(){
+	mainButton.classList.remove("light");
+	mainButton.setAttribute("class", "dark");
+	mainButton.textContent = "dark";
+	//overlay.style.backgroundColor = "rgb(0 0 0 / 50%)";
+	console.log("Light change" + buttonType);
+
+}
+
+
+function darkChange(){
+	mainButton.classList.remove("dark");
+	mainButton.classList.add("light");
+	//mainButton.setAttribute("class", "light");
+	mainButton.textContent = "light";
+	//overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
+	console.log("Dark change" + buttonType);
+}
+
+
+
+
+
