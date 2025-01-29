@@ -130,7 +130,7 @@ function darkChange(){
 	mainButton.textContent = "light";
 	//overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
 	buttonType =mainButton.getAttribute("class");
-	console.log("Dark change" + buttonType);
+	console.log("Dark change: " + buttonType);
 }
 
 
