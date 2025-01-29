@@ -44,9 +44,9 @@
 
 	  <h1>Week 2 Assignemnt</h1>
 	  	<h1> Tutorials</h1></h1>
-<h1> A first splash into JavaScript</h1>
+<h2> A first splash into JavaScript</h2>
 
-	<h2> Number guessing game</h2>
+	<h3> Number guessing game</h3>
 	<p> We have selected a random number between 1 and 100. 
 		See if you can guess it in 10 turns or fewer. We'll
 		tell you if you guess was too high or low.</p>
@@ -88,9 +88,9 @@ lowOrHi.textContent = "Last guess was too high";
 
 
 
-<h1> Storing the Information you need: Variables</h1>
+<h2> Storing the Information you need: Variables</h2>
 
-	<h2> Variable Example </h2>
+	<h3> Variable Example </h3>
 
 	<button id="button_A">Press me</button>
 	<h3 id="heading_A"></h3>
@@ -110,7 +110,7 @@ lowOrHi.textContent = "Last guess was too high";
 	</script>
 
 
-	<h2> Without Vaible <h2>
+	<h3> Without Vaible </h3>
 
 	<button id="button_B">Press me</button>
 	<h3 id="heading_B"></h3>
@@ -129,7 +129,7 @@ lowOrHi.textContent = "Last guess was too high";
 
 
 
-<h1> Basic Math in JavaScript: Number and Operators</h1>
+<h2> Basic Math in JavaScript: Number and Operators</h2>
 	<p>Come back and add more (Not working) </p>
 	
 	<button id = "#mathButton">Start machine</button>
@@ -157,7 +157,7 @@ lowOrHi.textContent = "Last guess was too high";
 
 	
 
-<h1> Handling text: String in JavaScipt</h1>
+<h2> Handling text: String in JavaScipt</h2>
 	<p> functioning </p>
 	<button id="stringHandling">Press me</button>
 	<div id="greeting"></div>
@@ -177,7 +177,7 @@ button.addEventListener("click", greet);
 
 
 
-<h1> Useful string methods </h1>
+<h2> Useful string methods </h2>
 
 	<p>This is mainly in the console</p>
 
@@ -244,11 +244,80 @@ button.addEventListener("click", greet);
 	
 
 
-<h1>Arrays</h1>
+<h2>Arrays</h2>
 
-<h1>Making decision</1>
+<p>Mainly printed out in the console</p>
 
-	<h2> Weather Decisions </h2>
+<script>
+
+console.log("----------Arrays print out---------");
+
+//This makes and printout an array 
+const shopping = ["bread", "milk", "cheese", "hummus", "noodles"];
+console.log("This is the orignal array" +shopping);
+
+//This makes the 1st index of the array tahini
+
+shopping[0] = "tahini";
+console.log( "This shows the new array" + shopping);
+// shopping will now return [ "tahini", "milk", "cheese", "hummus", "noodles" ]
+
+//This gets the index of a the array
+const birds = ["Parrot", "Falcon", "Owl"];
+console.log("Index of owl " + birds.indexOf("Owl")); //  2
+console.log("Index of rabbit: " + birds.indexOf("Rabbit")); // -1
+
+
+//This adds items to a list
+const cities = ["Manchester", "Liverpool"];
+cities.push("Cardiff");
+console.log("New arrray of cites: " +cities); // [ "Manchester", "Liverpool", "Cardiff" ]
+cities.push("Bradford", "Brighton");
+console.log("New array of cities: " + cities); // [ "Manchester", "Liverpool", "Cardiff", "Bradford", "Brighton" ]
+
+//This slice the array
+const citiesEngland = ["Manchester", "Liverpool", "Edinburgh", "Carlisle"];
+const index = citiesEngland.indexOf("Liverpool");
+if (index !== -1) {
+  cities.splice(index, 2);
+}
+console.log("This is the slice of the england cities array: " + cities); // [ "Manchester", "Carlisle" ]
+
+
+
+//This filters the cities based on length using the filter function 
+function isLong(city) {
+  return city.length > 8;
+}
+const citiesDifEngland = ["London", "Liverpool", "Totnes", "Edinburgh"];
+const longer = citiesDifEngland.filter(isLong);
+console.log(longer); // [ "Liverpool", "Edinburgh" ]
+
+
+//This used to split a string into an array 
+const data = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
+const citiesSplit = data.split(",");
+citiesSplit;
+
+citiesSplit.length;
+citiesSplit[0]; // the first item in the array
+citiesSplit[1]; // the second item in the array
+citiesSplit[cities.length - 1]; // the last item in the array
+
+//This joins the items together
+const commaSeparated = citiesSplit.join(",");
+commaSeparated;
+console.log("The items together in a string: " + commaSeparated);
+
+
+</script>
+
+
+
+		
+<h2>Making decision</h2>
+
+	<h3> Weather Decisions </h3>
 
 <label for="weather">Select the weather type today: </label>
 <select id="weather">
@@ -297,8 +366,8 @@ function setWeather() {
 
 
 
-<h1> Looping Code </h1>
-	<h2> Searching Contractor</h2>
+<h2> Looping Code </h2>
+	<h3> Searching Contractor</h3>
 	<label for="search">Search by contact name: </label>
 	<input id="searchContactor" type="text" />
 	<button id="contractorButton">Search</button>
@@ -368,8 +437,8 @@ btnItera.addEventListener("click", () => {
 	</script>
 
 	
-<h1> Function: reusable blocks of code </h1>
-	<h2> Arrow Function</h2>
+<h2> Function: reusable blocks of code </h2>
+	<h3> Arrow Function</h3>
 		<input id="textBox" type="text" />
 		<div id="output"></div>
 
@@ -383,11 +452,67 @@ btnItera.addEventListener("click", () => {
 
 	</script>
 
-<h1>Build your own function</h1>
+<h2>Build your own function</h2>
+<h3> Join function</h3>
+		<p> in concole</p>
+	<script>
+	console.log("-------Build your Own Function ------");
+	const myArray = ["I", "love", "chocolate", "frogs"];
+	const madeAString = myArray.join(" ");
+	console.log("Joing array using space: " + madeAString);
+	// returns 'I love chocolate frogs'
 
-<h1> Function return values</h1>
+	const madeAnotherString = myArray.join();
+	console.log("Joining array using ,: " +madeAnotherString);
+	// returns 'I,love,chocolate,frogs'
 
-<h1> Introduction to events </h1>
+	
+	//The is default parameter
+
+	function hello(name = "Chris") {
+  	console.log("This is default of hello function: " + `Hello ${name}!`);
+	}
+
+	hello("Ari"); // Hello Ari!
+	hello(); // Hello Chris!
+
+
+	//This uses the map function on an array 
+		const originals = [1, 2, 3];
+
+		const doubled = originals.map(item => item * 2);
+
+		console.log("This is using the map function: " + doubled); // [2, 4, 6]
+	</script>
+
+
+	
+<h2> Function return values</h2>
+	
+<script>
+//These funtions return the correct result of the item
+		function squared(num) {
+ 		 	return num * num;
+		}
+	
+		function cubed(num) {
+  			return num * num * num;
+		}
+
+		function factorial(num) {
+  			if (num < 0) return undefined;
+  			if (num === 0) return 1;
+  				let x = num - 1;
+  			while (x > 1) {
+    				num *= x;
+    				x--;
+  			}
+  			return num;
+			}
+
+</script>
+
+<h2> Introduction to events </h2>
 
 	<button id="changeColorButton">Change color</button>
 	<button id="changeToWhite">White color</button>
@@ -412,7 +537,7 @@ btnItera.addEventListener("click", () => {
 
 	</script>
 
-	<h2> Preventing default behavior</h2>
+	<h3> Preventing default behavior</h3>
 
 		<form>
   			<div>
@@ -444,9 +569,48 @@ btnItera.addEventListener("click", () => {
 		</script>
 	
 
-<h1> Event Bubbling </h1>
+<h2> Event Bubbling </h2>
 
-<h1> JavaScript Object Basics</h1>
+		<h2> Setting a listener on a parent element</h2>
+		<div id="containerClickMe">
+  			<button id="devClickMe">Click me!</button>
+		</div>
+		<pre id="outputPre"></pre>
+		
+		<script>
+		const outputPre = document.querySelector("#outputPre");
+		function handleClick(e) {
+  		outputPre.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`;
+		}
+
+		const container = document.querySelector("#containerClickMe");
+		container.addEventListener("click", handleClick);
+
+		</script>
+
+	
+<h2> JavaScript Object Basics</h2>
+
+
+<p> This is mainly in the creation of an object: printed in the console</p>
+
+<script>
+	console.log("----------Javascript Objecy Basics -----------");
+	const person = {
+  	name: ["Bob", "Smith"],
+  	age: 32,
+  	bio: function () {
+    	console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+  		},
+  		introduceSelf: function () {
+    		console.log(`Hi! I'm ${this.name[0]}.`);
+		
+  		},
+	};
+
+
+</script>
+
 
 	  <h1>Challenge</h1>
 <div id="full-img">
