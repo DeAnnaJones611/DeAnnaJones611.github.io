@@ -43,7 +43,412 @@
 
 
 	  <h1>Week 2 Assignemnt</h1>
+	  	<h1> Tutorials</h1></h1>
+<h1> A first splash into JavaScript</h1>
+
+	<h2> Number guessing game</h2>
+	<p> We have selected a random number between 1 and 100. 
+		See if you can guess it in 10 turns or fewer. We'll
+		tell you if you guess was too high or low.</p>
+<label for="guessField">Enter a guess: </label>
+<input type="number" id="guessField" class="guessField" />
+<input type="submit" value="Submit guess" class="guessSubmit" />
+
+<div class="resultParas">
+  <p class="guesses"></p>
+  <p class="lastResult"></p>
+  <p class="lowOrHi"></p>
+</div>
+
+
+
+<script>
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+const guesses = document.querySelector(".guesses");
+const lastResult = document.querySelector(".lastResult");
+const lowOrHi = document.querySelector(".lowOrHi");
+
+const guessSubmit = document.querySelector(".guessSubmit");
+const guessField = document.querySelector(".guessField");
+
+let guessCount = 1;
+let resetButton;
+
+function checkGuess() {
+  alert("I am a placeholder");
+}
+
+guessSubmit.addEventListener("click", checkGuess);
+
+lowOrHi.textContent = "Last guess was too high";
+
+</script>
+
+
+
+
+<h1> Storing the Information you need: Variables</h1>
+
+	<h2> Variable Example </h2>
+
+	<button id="button_A">Press me</button>
+	<h3 id="heading_A"></h3>
+
+	<script>
+	const buttonA = document.querySelector("#button_A");
+	const headingA = document.querySelector("#heading_A");
+
+	let count = 1;
+
+	buttonA.onclick = () => {
+	  buttonA.textContent = "Try again!";
+	  headingA.textContent = `${count} clicks so far`;
+	  count += 1;
+	};
+
+	</script>
+
+
+	<h2> Without Vaible <h2>
+
+	<button id="button_B">Press me</button>
+	<h3 id="heading_B"></h3>
+
+	<script>
+		const buttonB = document.querySelector("#button_B");
+	const headingB = document.querySelector("#heading_B");
+
+	buttonB.onclick = () => {
+  	buttonB.textContent = "Try again!";
+  	headingB.textContent = "1 click so far";
+	};
+
+	</script>
+
+
+
+
+<h1> Basic Math in JavaScript: Number and Operators</h1>
+	<p>Come back and add more (Not working) </p>
 	
+	<button id = "#mathButton">Start machine</button>
+	<p id = "#mathPara">The machine is stopped.</p>
+	
+	<script>
+
+	//const btn = document.querySelector("mathButton");
+	//const txt = document.querySelector("mathPara");
+//
+	//btn.addEventListener("click", (event) => {updateBtn});
+
+	//function updateBtn() {
+ 	 //if (btn.textContent === "Start machine") {
+  	 // btn.textContent = "Stop machine";
+   	 //txt.textContent = "The machine has started!";
+ 	 //} else {
+  	//  btn.textContent = "Start machine";
+  	//  txt.textContent = "The machine is stopped.";
+ 	// }
+	//}
+
+	</script>
+	
+
+	
+
+<h1> Handling text: String in JavaScipt</h1>
+	<p> functioning </p>
+	<button id="stringHandling">Press me</button>
+	<div id="greeting"></div>
+
+	<script>
+		const button = document.querySelector("#stringHandling");
+
+	function greet() {
+  	const name = prompt("What is your name?");
+  	const greeting = document.querySelector("#greeting");
+  	greeting.textContent = `Hello ${name}, nice to see you!`;
+	}
+
+button.addEventListener("click", greet);
+
+	</script>
+
+
+
+<h1> Useful string methods </h1>
+
+	<p>This is mainly in the console</p>
+
+	<script>
+
+		//This checks if the varible has that section of letters in the 
+		const browserType = "mozilla";
+
+		if (browserType.includes("zilla")) {
+		  console.log("Found zilla!");
+		} else {
+ 		 console.log("No zilla here!");
+		}
+
+		//This checks if it starts with the word 
+
+		if (browserType.startsWith("zilla")) {
+			  console.log("Found zilla!");
+		} else {
+  			console.log("No zilla here!");
+		}
+
+
+		//This check if it ends with it
+
+		if (browserType.endsWith("zilla")) {
+  			console.log("Found zilla!");
+		} else {
+	  		console.log("No zilla here!");
+		}
+
+
+		//This is used to show the position of the items
+			const tagline = "MDN - Resources for developers, by developers";
+			console.log("Tangling index of developers: " + tagline.indexOf("developers")); // 20
+			console.log("Taglint index of x: " + tagline.indexOf("x")); // -1
+			
+			const firstOccurrence = tagline.indexOf("developers");
+			const secondOccurrence = tagline.indexOf("developers", firstOccurrence + 1);
+
+			console.log("This is the first occurence of developers: " + firstOccurrence); // 20
+			console.log("This is the second occurence of developers: " + secondOccurrence); // 35
+		
+		//This slices the string
+		console.log("This is the broswer slice of Mozilla: " + browserType.slice(1, 4)); // "ozi"
+
+
+		//This is to change the case
+			const radData = "My NaMe Is MuD";
+			console.log("Makes lower case: "+radData.toLowerCase());
+			console.log("Makes upper case: " +radData.toUpperCase());
+
+
+
+		//This is to update a string
+			browserTypeUpdate = browserType.replace("moz", "van");
+			console.log("Replace moz to van: " + browserTypeUpdate); // "vanilla"
+			console.log("The original: " + browserType);
+
+
+
+	</script>
+
+	
+
+
+<h1>Arrays</h1>
+
+<h1>Making decision</1>
+
+	<h2> Weather Decisions </h2>
+
+<label for="weather">Select the weather type today: </label>
+<select id="weather">
+  <option value="">--Make a choice--</option>
+  <option value="sunny">Sunny</option>
+  <option value="rainy">Rainy</option>
+  <option value="snowing">Snowing</option>
+  <option value="overcast">Overcast</option>
+</select>
+
+<p id ="decisionsMaking"></p>
+
+	<script>
+	const select = document.querySelector("select");
+const para = document.querySelector("#decisionsMaking");
+
+select.addEventListener("change", setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  switch (choice) {
+    case "sunny":
+      para.textContent =
+        "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.";
+      break;
+    case "rainy":
+      para.textContent =
+        "Rain is falling outside; take a rain coat and an umbrella, and don't stay out for too long.";
+      break;
+    case "snowing":
+      para.textContent =
+        "The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.";
+      break;
+    case "overcast":
+      para.textContent =
+        "It isn't raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.";
+      break;
+    default:
+      para.textContent = "";
+  }
+}
+
+
+	</script>
+
+
+
+<h1> Looping Code </h1>
+	<h2> Searching Contractor</h2>
+	<label for="search">Search by contact name: </label>
+	<input id="searchContactor" type="text" />
+	<button id="contractorButton">Search</button>
+
+	<p id ="contractorPara"></p>
+	
+	<script>
+	const contacts = [
+  	"Chris:2232322",
+ 	 "Sarah:3453456",
+ 	 "Bill:7654322",
+ 	 "Mary:9998769",
+ 	 "Dianne:9384975",
+		];
+	const paraCon = document.querySelector("#contractorPara");
+	const inputCon = document.querySelector("#searchContactor");
+	const btnCon = document.querySelector("#contractorButton");
+
+	btnCon.addEventListener("click", () => {
+ 	 const searchName = inputCon.value.toLowerCase();
+  	inputCon.value = "";
+  	inputCon.focus();
+  	paraCon.textContent = "";
+  	for (const contact of contacts) {
+   	 const splitContact = contact.split(":");
+   	 if (splitContact[0].toLowerCase() === searchName) {
+    	  paraCon.textContent = `${splitContact[0]}'s number is ${splitContact[1]}.`;
+    	  break;
+    	}
+  	}
+  	if (paraCon.textContent === "") {
+   	 paraCon.textContent = "Contact not found.";
+  	}
+	});
+
+	
+	</script>
+
+
+
+<h2>Skipping Iterations </h2>
+<label for="number">Enter number: </label>
+<input id="number" type="number" />
+<button id="skippingIterationButton">Generate integer squares</button>
+
+<p id="skippingIterationPara">Output:</p>
+
+	<script>
+		const paraitera = document.querySelector("#skippingIterationPara");
+const inputItera = document.querySelector("#number");
+const btnItera = document.querySelector("#skippingIterationButton");
+
+btnItera.addEventListener("click", () => {
+  paraitera.textContent = "Output: ";
+  const num = inputItera.value;
+  inputItera.value = "";
+  inputItera.focus();
+  for (let i = 1; i <= num; i++) {
+    let sqRoot = Math.sqrt(i);
+    if (Math.floor(sqRoot) !== sqRoot) {
+      continue;
+    }
+    paraitera.textContent += `${i} `;
+  }
+});
+
+	</script>
+
+	
+<h1> Function: reusable blocks of code </h1>
+	<h2> Arrow Function</h2>
+		<input id="textBox" type="text" />
+		<div id="output"></div>
+
+	<script>
+	const textBox = document.querySelector("#textBox");
+	const output = document.querySelector("#output");
+
+	textBox.addEventListener("keydown", (event) => {
+  	output.textContent = `You pressed "${event.key}".`;			
+	});
+
+	</script>
+
+<h1>Build your own function</h1>
+
+<h1> Function return values</h1>
+
+<h1> Introduction to events </h1>
+
+	<button id="changeColorButton">Change color</button>
+	<button id="changeToWhite">White color</button>
+
+	<script>
+	const btnColorChange = document.querySelector("#changeColorButton");
+	const btnColorChangeBack = document.querySelector("#changeToWhite");
+
+	function random(number) {
+ 	 return Math.floor(Math.random() * (number + 1));
+	}
+
+	btnColorChange.addEventListener("click", () => {
+ 	 const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+  	document.body.style.backgroundColor = rndCol;
+	});
+
+	btnColorChangeBack.addEventListener("click", () => {
+ 	 const whiteCol = `#FFFFFF`;
+  	document.body.style.backgroundColor = whiteCol;
+	});
+
+	</script>
+
+	<h2> Preventing default behavior</h2>
+
+		<form>
+  			<div>
+    				<label for="fname">First name: </label>
+    				<input id="fname" type="text" />
+  			</div>
+  			<div>
+   				 <label for="lname">Last name: </label>
+   				 <input id="lname" type="text" />
+  			</div>
+  			<div>
+    				<input id="submit" type="submit" />
+  			</div>
+			</form>
+		<p id="formPara"></p>
+		<script>
+			const form = document.querySelector("form");
+			const fname = document.getElementById("fname");
+			const lname = document.getElementById("lname");
+			const paraForm = document.querySelector("#formPara");
+
+			form.addEventListener("submit", (e) => {
+  				if (fname.value === "" || lname.value === "") {
+    					e.preventDefault();
+    					paraForm.textContent = "You need to fill in both names!";
+  					}
+				});
+
+		</script>
+	
+
+<h1> Event Bubbling </h1>
+
+<h1> JavaScript Object Basics</h1>
+
+	  <h1>Challenge</h1>
 <div id="full-img">
 
   <img
