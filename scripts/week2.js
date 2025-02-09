@@ -2,7 +2,7 @@
 
 
 
-const arrayImage = [ "images/pic1.png"  , "images/pic2.png" , "images/pic3.png"  , "images/pic4.png" ];
+const arrayImage = [ "../images/pic1.png"  , "../images/pic2.png" , "../images/pic3.png"  , "../images/pic4.png" ];
 
 let  thumbNail = document.querySelector('.thumb-bar');
 
