@@ -97,6 +97,9 @@ function getAddition(){
 
 	//This assigns the equation to show to the screen 
 	equationPrint.textContent = numOne + " +  " + numTwo;
+
+	//This resets the result text
+	printResult.textContent = "Result will show";
 	
 
 }
@@ -132,6 +135,11 @@ function getSubtraction(){
 
 	//This prints out the equation to the screen 
 	equationPrint.textContent = largeNum + " -  " + smallNum;
+
+
+	
+	//This resets the result text
+	printResult.textContent = "Result will show";
 	
 
 }
@@ -151,7 +159,11 @@ function getMultiplication(){
 
 	//This assigns the equation to show to the screen
 	equationPrint.textContent = numOne + "  x " + numTwo;
+
+
 	
+	//This resets the result text
+	printResult.textContent = "Result will show";
 
 }
 
@@ -176,6 +188,10 @@ function getDivision(){
 
 	//This assigns the equation to show to the screen
 	equationPrint.textContent = divsionEquation;	
+
+	
+	//This resets the result text
+	printResult.textContent = "Result will show";
 
 }
 
