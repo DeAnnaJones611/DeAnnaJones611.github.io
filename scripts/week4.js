@@ -56,14 +56,26 @@ const equationPrint = document.querySelector(".printEquation");
 const printResult = document.querySelector(".result");
 
 
-
 	//User input 
 const userAnswerObj = document.querySelector("input");
 
+	//User Score  
+const userScore = document.querySelector(".score");
+
+//This is to keep the score points 
+let useScore = 0 ;
+
+//Print out score 
+userScore.textContent = "Current score:"  +  useScore; 
+
 	
-	//Global varible to keep the 
+	//Global varible to keep the correct answer 
 
 let correctAnswer;
+
+
+	//This is the equation score 
+let equationScore ;
 
 
 
@@ -100,7 +112,9 @@ function getAddition(){
 
 	//This resets the result text
 	printResult.textContent = "Result will show";
-	
+
+	//This is the score for the equation
+	equationScore = 1;
 
 }
 
@@ -142,6 +156,8 @@ function getSubtraction(){
 	printResult.textContent = "Result will show";
 	
 
+	//This is the score for the equation
+	equationScore = 2;
 }
 
 
@@ -164,6 +180,9 @@ function getMultiplication(){
 	
 	//This resets the result text
 	printResult.textContent = "Result will show";
+
+	//This is the score for the equation
+	equationScore = 3;
 
 }
 
@@ -192,6 +211,9 @@ function getDivision(){
 	
 	//This resets the result text
 	printResult.textContent = "Result will show";
+
+	//This is the score for the equation
+	equationScore = 4;
 
 }
 
@@ -234,14 +256,33 @@ function checkAnswer(){
 			if (userNum == correctAnswer){
 				//Text printed if correct
 				printResult.textContent = "You got it right";
+
+								
+				//Adds the the score 
+				useScore = useScore + equationScore;
 			}
 			else{
 
 				//Text printed if incorrect
 				printResult.textContent = "You got it wrong. The correct answer is : " + correctAnswer;	
+
+				//The equation to calculate the score
+				 if(useScore >= equationScore){
+					 //subtract form the score 
+					useScore = useScore - equationScore;
+				 }
+				 else{
+					 //Keeps the score at 0
+					useScore = 0; 
+				 
+				 }
+				
 			}
 			//Once answer is checked: Equation rest
 			equationPrint.textContent = "";
+
+			//Print the score 
+			userScore.textContent = "Current score:"  +  useScore;
 
 	}
 
