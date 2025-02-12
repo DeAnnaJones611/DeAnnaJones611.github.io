@@ -1,6 +1,3 @@
-/*this is the stylying for the tutorial 1 */
-
-
 html{
 	font-size: 10 px;
 	background-color: #00539f;
@@ -17,62 +14,19 @@ body{
 	
 }
 
-h1{
-	margin: 0;
-	padding: 20px 0;
-	color: #00539f;
-	text-shadow: 3px 3px 1px black;
-}
-
-p,li{
-	font-size: 16px;
-	line-height: 2,
-	letter-spacing: 1px;
-}
-
-img{
-	display: block; 
-	margin: 0 auto;
-	max-width: 100%;
-}
-
-
-#full-img {
-	padding: 10;
-	margin: 10;
-	height: 500px;
-	width: 500px;
-}
-
-
-#full-img img{
-	position: absolute;
-	padding: 10;
-	margin: 10;
-	height: 500px;
-	width: 500px;
-	z-index: 0;
+button{
+	border: none;
+	text-align: center;
+	padding: 20px 25px;	
 	
 }
 
+p{
 
-#full-img button{
-	position: absolute;
-	z-index: 1;
-
-}
-
-
-
-#thumbNail{
-	display: flex;
-	flex-direction: row;
-	
-}
-
-#thumbNail img {
-	height: 90;
-	width: 20%;
-
-
+	letter-spacing: 2px;
+	line-height: 0.8;
+	padding: 20px;
+	text-align: center;
+	margin: 15px;
+	border-style: solid; 
 }
