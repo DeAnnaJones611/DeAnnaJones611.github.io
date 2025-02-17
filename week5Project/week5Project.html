@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Project</title>
+	<link  rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+
+    <h1>Week 5 Project</h1>
+	<div class= "holdSection"> 
+	
+		<button id="class1"> info class 1</button>
+		
+				<button id="class2">  info class 2</button>
+				
+						<button id="class3">  info class 3</button>
+						
+								<button id="class4">  info class 4</button>
+	
+	</div>
+
+		
+	<div class= "holdSection"    id="target"
+  ondrop="dropHandler(event)"
+  ondragover="dragoverHandler(event)">
+		<div id = "section1" draggable="true"  class= "section">
+		
+
+		</div>
+		
+		
+		<div id = "section2" draggable="true" class= "section">
+
+		</div>
+		
+		
+		<div id = "section3" draggable="true"  class= "section">
+
+		
+		</div>
+		
+		<div id = "section4" draggable="true" class= "section">
+		
+
+		</div>
+		
+		
+	
+	</div>
+
+ 
+
+
+<p id="target" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+ Semester One
+</p>
+
+
+
+<p id="target" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+ Semester two
+</p>
+
+
+
+<p id="target" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+ Semester three
+</p>
+
+
+<p id = "displayInfo" ></p>
+
+
+
+
+  </body>
+  
+  <script src="scripts/main.js"></script>
+</html>
