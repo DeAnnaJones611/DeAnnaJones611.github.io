@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Week 5 Tutorial</title>
+	   <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+  <h1> The tutorial Section</h1>
+  
+    <section>
+      <img
+        src="image/dinosaur.png"
+        alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth." />
+      <p>
+        Here we will add a link to the
+        <a href="https://www.mozilla.org/">Mozilla homepage</a>
+      </p>
+    </section>
+
+	<script>
+	
+		const link = documentSelector("a");
+		link.textContent = "Mozilla Developer Network";
+
+		const text = document.createTextNode(
+			"- the premier source for web development knowledge.",
+		);
+
+		const linkPara = document.querySelector("p");
+		linkPara.appendChild(text);
+
+		//Moving and removing elements
+		
+			sect.appendChild(linkPara);
+
+			sect.removeChild(linkPara);
+			
+			linkPara.remove();
+
+			linkPara.parentNode.removeChild(linkPara);
+
+
+		//Creating and Placing new Nodes
+			const sect = document.querySelect("section:);
+			
+			const para = document.createElement("p");
+		
+			para.textContent = "We hope you enjoy the ride";
+
+			sect.appendChild(para); 
+
+
+		//Manipulating Styles
+			para.style.color = "white";
+			para.style.backgroundColor = "black";
+			para.style.padding = "10px";
+			para.style.width = "250px";
+			para.style.textAlign = "center";
+	</script>
+	
+	
+	<h1>Try yourself</h1>
+	
+	  <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+		const listEle = document.querySelector("ul");
+		const inputEle = document.querySelector("input");
+		const buttonEle = document.querySelector("button");
+
+		const deleteButton = document.getElementById("delete");
+		
+		
+		buttonEle.addEventListener("click", storeItem);
+		
+		deleteButton.addEventListener("click", deleteItem);
+		
+		
+		function storeItem (){
+			let inputVar = inputEle.value;
+			console.log("thing: " + inputVar);
+			
+			inputEle.value = "";
+			
+			
+			//Create a new list item, span, and button
+			
+			let newSpan = document.createElement("SPAN");
+			
+			let newListItem = document.createElement("li");
+			
+			let newButton = document.createElement("button");
+			
+			
+			newSpan.textContent = inputVar;
+			
+			newButton.textContent = "Delete";
+			
+			newButton.id = "delete";
+			
+			
+			newListItem.appendChild(newSpan);
+			newListItem.appendChild(newButton);
+			
+			
+			listEle.appendChild(newListItem);
+			
+		}
+		
+		
+		function deleteItem(){
+		listEle.parentNode.removeChild(deleteButton);
+			
+		
+		}
+
+    </script>
+    </script>
+  </body>
+</html>
