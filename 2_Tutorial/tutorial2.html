@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My test page</title>
+	<link  rel="stylesheet" href="styles/style.css" />
+
+  </head>
+
+
+
+  <body>
+
+	<h1><a href = "../index.html"> Landing Page </a><h1>
+
+	  <h1>Week 2 Assignemnt</h1>
+	  	<h1> Tutorials</h1></h1>
+<h2> A first splash into JavaScript</h2>
+
+	<h3> Number guessing game</h3>
+	<p> We have selected a random number between 1 and 100. 
+		See if you can guess it in 10 turns or fewer. We'll
+		tell you if you guess was too high or low.</p>
+<label for="guessField">Enter a guess: </label>
+<input type="number" id="guessField" class="guessField" />
+<input type="submit" value="Submit guess" class="guessSubmit" />
+
+<div class="resultParas">
+  <p class="guesses"></p>
+  <p class="lastResult"></p>
+  <p class="lowOrHi"></p>
+</div>
+
+
+
+<script>
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+const guesses = document.querySelector(".guesses");
+const lastResult = document.querySelector(".lastResult");
+const lowOrHi = document.querySelector(".lowOrHi");
+
+const guessSubmit = document.querySelector(".guessSubmit");
+const guessField = document.querySelector(".guessField");
+
+let guessCount = 1;
+let resetButton;
+
+function checkGuess() {
+  alert("I am a placeholder");
+}
+
+guessSubmit.addEventListener("click", checkGuess);
+
+lowOrHi.textContent = "Last guess was too high";
+
+</script>
+
+
+
+
+<h2> Storing the Information you need: Variables</h2>
+
+	<h3> Variable Example </h3>
+
+	<button id="button_A">Press me</button>
+	<h3 id="heading_A"></h3>
+
+	<script>
+	const buttonA = document.querySelector("#button_A");
+	const headingA = document.querySelector("#heading_A");
+
+	let count = 1;
+
+	buttonA.onclick = () => {
+	  buttonA.textContent = "Try again!";
+	  headingA.textContent = `${count} clicks so far`;
+	  count += 1;
+	};
+
+	</script>
+
+
+	<h3> Without Vaible </h3>
+
+	<button id="button_B">Press me</button>
+	<h3 id="heading_B"></h3>
+
+	<script>
+		const buttonB = document.querySelector("#button_B");
+	const headingB = document.querySelector("#heading_B");
+
+	buttonB.onclick = () => {
+  	buttonB.textContent = "Try again!";
+  	headingB.textContent = "1 click so far";
+	};
+
+	</script>
+
+
+
+
+<h2> Basic Math in JavaScript: Number and Operators</h2>
+	<p>Come back and add more (Not working) </p>
+	
+	<button id = "#mathButton">Start machine</button>
+	<p id = "#mathPara">The machine is stopped.</p>
+	
+	<script>
+
+	//const btn = document.querySelector("mathButton");
+	//const txt = document.querySelector("mathPara");
+//
+	//btn.addEventListener("click", (event) => {updateBtn});
+
+	//function updateBtn() {
+ 	 //if (btn.textContent === "Start machine") {
+  	 // btn.textContent = "Stop machine";
+   	 //txt.textContent = "The machine has started!";
+ 	 //} else {
+  	//  btn.textContent = "Start machine";
+  	//  txt.textContent = "The machine is stopped.";
+ 	// }
+	//}
+
+	</script>
+	
+
+	
+
+<h2> Handling text: String in JavaScipt</h2>
+	<p> functioning </p>
+	<button id="stringHandling">Press me</button>
+	<div id="greeting"></div>
+
+	<script>
+		const button = document.querySelector("#stringHandling");
+
+	function greet() {
+  	const name = prompt("What is your name?");
+  	const greeting = document.querySelector("#greeting");
+  	greeting.textContent = `Hello ${name}, nice to see you!`;
+	}
+
+button.addEventListener("click", greet);
+
+	</script>
+
+
+
+<h2> Useful string methods </h2>
+
+	<p>This is mainly in the console</p>
+
+	<script>
+
+		//This checks if the varible has that section of letters in the 
+		const browserType = "mozilla";
+
+		if (browserType.includes("zilla")) {
+		  console.log("Found zilla!");
+		} else {
+ 		 console.log("No zilla here!");
+		}
+
+		//This checks if it starts with the word 
+
+		if (browserType.startsWith("zilla")) {
+			  console.log("Found zilla!");
+		} else {
+  			console.log("No zilla here!");
+		}
+
+
+		//This check if it ends with it
+
+		if (browserType.endsWith("zilla")) {
+  			console.log("Found zilla!");
+		} else {
+	  		console.log("No zilla here!");
+		}
+
+
+		//This is used to show the position of the items
+			const tagline = "MDN - Resources for developers, by developers";
+			console.log("Tangling index of developers: " + tagline.indexOf("developers")); // 20
+			console.log("Taglint index of x: " + tagline.indexOf("x")); // -1
+			
+			const firstOccurrence = tagline.indexOf("developers");
+			const secondOccurrence = tagline.indexOf("developers", firstOccurrence + 1);
+
+			console.log("This is the first occurence of developers: " + firstOccurrence); // 20
+			console.log("This is the second occurence of developers: " + secondOccurrence); // 35
+		
+		//This slices the string
+		console.log("This is the broswer slice of Mozilla: " + browserType.slice(1, 4)); // "ozi"
+
+
+		//This is to change the case
+			const radData = "My NaMe Is MuD";
+			console.log("Makes lower case: "+radData.toLowerCase());
+			console.log("Makes upper case: " +radData.toUpperCase());
+
+
+
+		//This is to update a string
+			browserTypeUpdate = browserType.replace("moz", "van");
+			console.log("Replace moz to van: " + browserTypeUpdate); // "vanilla"
+			console.log("The original: " + browserType);
+
+
+
+	</script>
+
+	
+
+
+<h2>Arrays</h2>
+
+<p>Mainly printed out in the console</p>
+
+<script>
+
+console.log("----------Arrays print out---------");
+
+//This makes and printout an array 
+const shopping = ["bread", "milk", "cheese", "hummus", "noodles"];
+console.log("This is the orignal array" +shopping);
+
+//This makes the 1st index of the array tahini
+
+shopping[0] = "tahini";
+console.log( "This shows the new array" + shopping);
+// shopping will now return [ "tahini", "milk", "cheese", "hummus", "noodles" ]
+
+//This gets the index of a the array
+const birds = ["Parrot", "Falcon", "Owl"];
+console.log("Index of owl " + birds.indexOf("Owl")); //  2
+console.log("Index of rabbit: " + birds.indexOf("Rabbit")); // -1
+
+
+//This adds items to a list
+const cities = ["Manchester", "Liverpool"];
+cities.push("Cardiff");
+console.log("New arrray of cites: " +cities); // [ "Manchester", "Liverpool", "Cardiff" ]
+cities.push("Bradford", "Brighton");
+console.log("New array of cities: " + cities); // [ "Manchester", "Liverpool", "Cardiff", "Bradford", "Brighton" ]
+
+//This slice the array
+const citiesEngland = ["Manchester", "Liverpool", "Edinburgh", "Carlisle"];
+const index = citiesEngland.indexOf("Liverpool");
+if (index !== -1) {
+  cities.splice(index, 2);
+}
+console.log("This is the slice of the england cities array: " + cities); // [ "Manchester", "Carlisle" ]
+
+
+
+//This filters the cities based on length using the filter function 
+function isLong(city) {
+  return city.length > 8;
+}
+const citiesDifEngland = ["London", "Liverpool", "Totnes", "Edinburgh"];
+const longer = citiesDifEngland.filter(isLong);
+console.log(longer); // [ "Liverpool", "Edinburgh" ]
+
+
+//This used to split a string into an array 
+const data = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
+const citiesSplit = data.split(",");
+citiesSplit;
+
+citiesSplit.length;
+citiesSplit[0]; // the first item in the array
+citiesSplit[1]; // the second item in the array
+citiesSplit[cities.length - 1]; // the last item in the array
+
+//This joins the items together
+const commaSeparated = citiesSplit.join(",");
+commaSeparated;
+console.log("The items together in a string: " + commaSeparated);
+
+
+</script>
+
+
+
+		
+<h2>Making decision</h2>
+
+	<h3> Weather Decisions </h3>
+
+<label for="weather">Select the weather type today: </label>
+<select id="weather">
+  <option value="">--Make a choice--</option>
+  <option value="sunny">Sunny</option>
+  <option value="rainy">Rainy</option>
+  <option value="snowing">Snowing</option>
+  <option value="overcast">Overcast</option>
+</select>
+
+<p id ="decisionsMaking"></p>
+
+	<script>
+	const select = document.querySelector("select");
+const para = document.querySelector("#decisionsMaking");
+
+select.addEventListener("change", setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  switch (choice) {
+    case "sunny":
+      para.textContent =
+        "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.";
+      break;
+    case "rainy":
+      para.textContent =
+        "Rain is falling outside; take a rain coat and an umbrella, and don't stay out for too long.";
+      break;
+    case "snowing":
+      para.textContent =
+        "The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.";
+      break;
+    case "overcast":
+      para.textContent =
+        "It isn't raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.";
+      break;
+    default:
+      para.textContent = "";
+  }
+}
+
+
+	</script>
+
+
+
+<h2> Looping Code </h2>
+	<h3> Searching Contractor</h3>
+	<label for="search">Search by contact name: </label>
+	<input id="searchContactor" type="text" />
+	<button id="contractorButton">Search</button>
+
+	<p id ="contractorPara"></p>
+	
+	<script>
+	const contacts = [
+  	"Chris:2232322",
+ 	 "Sarah:3453456",
+ 	 "Bill:7654322",
+ 	 "Mary:9998769",
+ 	 "Dianne:9384975",
+		];
+	const paraCon = document.querySelector("#contractorPara");
+	const inputCon = document.querySelector("#searchContactor");
+	const btnCon = document.querySelector("#contractorButton");
+
+	btnCon.addEventListener("click", () => {
+ 	 const searchName = inputCon.value.toLowerCase();
+  	inputCon.value = "";
+  	inputCon.focus();
+  	paraCon.textContent = "";
+  	for (const contact of contacts) {
+   	 const splitContact = contact.split(":");
+   	 if (splitContact[0].toLowerCase() === searchName) {
+    	  paraCon.textContent = `${splitContact[0]}'s number is ${splitContact[1]}.`;
+    	  break;
+    	}
+  	}
+  	if (paraCon.textContent === "") {
+   	 paraCon.textContent = "Contact not found.";
+  	}
+	});
+
+	
+	</script>
+
+
+
+<h2>Skipping Iterations </h2>
+<label for="number">Enter number: </label>
+<input id="number" type="number" />
+<button id="skippingIterationButton">Generate integer squares</button>
+
+<p id="skippingIterationPara">Output:</p>
+
+	<script>
+		const paraitera = document.querySelector("#skippingIterationPara");
+const inputItera = document.querySelector("#number");
+const btnItera = document.querySelector("#skippingIterationButton");
+
+btnItera.addEventListener("click", () => {
+  paraitera.textContent = "Output: ";
+  const num = inputItera.value;
+  inputItera.value = "";
+  inputItera.focus();
+  for (let i = 1; i <= num; i++) {
+    let sqRoot = Math.sqrt(i);
+    if (Math.floor(sqRoot) !== sqRoot) {
+      continue;
+    }
+    paraitera.textContent += `${i} `;
+  }
+});
+
+	</script>
+
+	
+<h2> Function: reusable blocks of code </h2>
+	<h3> Arrow Function</h3>
+		<input id="textBox" type="text" />
+		<div id="output"></div>
+
+	<script>
+	const textBox = document.querySelector("#textBox");
+	const output = document.querySelector("#output");
+
+	textBox.addEventListener("keydown", (event) => {
+  	output.textContent = `You pressed "${event.key}".`;			
+	});
+
+	</script>
+
+<h2>Build your own function</h2>
+<h3> Join function</h3>
+		<p> in concole</p>
+	<script>
+	console.log("-------Build your Own Function ------");
+	const myArray = ["I", "love", "chocolate", "frogs"];
+	const madeAString = myArray.join(" ");
+	console.log("Joing array using space: " + madeAString);
+	// returns 'I love chocolate frogs'
+
+	const madeAnotherString = myArray.join();
+	console.log("Joining array using ,: " +madeAnotherString);
+	// returns 'I,love,chocolate,frogs'
+
+	
+	//The is default parameter
+
+	function hello(name = "Chris") {
+  	console.log("This is default of hello function: " + `Hello ${name}!`);
+	}
+
+	hello("Ari"); // Hello Ari!
+	hello(); // Hello Chris!
+
+
+	//This uses the map function on an array 
+		const originals = [1, 2, 3];
+
+		const doubled = originals.map(item => item * 2);
+
+		console.log("This is using the map function: " + doubled); // [2, 4, 6]
+	</script>
+
+
+	
+<h2> Function return values</h2>
+	
+<script>
+//These funtions return the correct result of the item
+		function squared(num) {
+ 		 	return num * num;
+		}
+	
+		function cubed(num) {
+  			return num * num * num;
+		}
+
+		function factorial(num) {
+  			if (num < 0) return undefined;
+  			if (num === 0) return 1;
+  				let x = num - 1;
+  			while (x > 1) {
+    				num *= x;
+    				x--;
+  			}
+  			return num;
+			}
+
+</script>
+
+<h2> Introduction to events </h2>
+
+	<button id="changeColorButton">Change color</button>
+	<button id="changeToWhite">White color</button>
+
+	<script>
+	const btnColorChange = document.querySelector("#changeColorButton");
+	const btnColorChangeBack = document.querySelector("#changeToWhite");
+
+	function random(number) {
+ 	 return Math.floor(Math.random() * (number + 1));
+	}
+
+	btnColorChange.addEventListener("click", () => {
+ 	 const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+  	document.body.style.backgroundColor = rndCol;
+	});
+
+	btnColorChangeBack.addEventListener("click", () => {
+ 	 const whiteCol = `#FFFFFF`;
+  	document.body.style.backgroundColor = whiteCol;
+	});
+
+	</script>
+
+	<h3> Preventing default behavior</h3>
+
+		<form>
+  			<div>
+    				<label for="fname">First name: </label>
+    				<input id="fname" type="text" />
+  			</div>
+  			<div>
+   				 <label for="lname">Last name: </label>
+   				 <input id="lname" type="text" />
+  			</div>
+  			<div>
+    				<input id="submit" type="submit" />
+  			</div>
+			</form>
+		<p id="formPara"></p>
+		<script>
+			const form = document.querySelector("form");
+			const fname = document.getElementById("fname");
+			const lname = document.getElementById("lname");
+			const paraForm = document.querySelector("#formPara");
+
+			form.addEventListener("submit", (e) => {
+  				if (fname.value === "" || lname.value === "") {
+    					e.preventDefault();
+    					paraForm.textContent = "You need to fill in both names!";
+  					}
+				});
+
+		</script>
+	
+
+<h2> Event Bubbling </h2>
+
+		<h2> Setting a listener on a parent element</h2>
+		<div id="containerClickMe">
+  			<button id="devClickMe">Click me!</button>
+		</div>
+		<pre id="outputPre"></pre>
+		
+		<script>
+		const outputPre = document.querySelector("#outputPre");
+		function handleClick(e) {
+  		outputPre.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`;
+		}
+
+		const container = document.querySelector("#containerClickMe");
+		container.addEventListener("click", handleClick);
+
+		</script>
+
+	
+<h2> JavaScript Object Basics</h2>
+
+
+<p> This is mainly in the creation of an object: printed in the console</p>
+
+<script>
+	console.log("----------Javascript Objecy Basics -----------");
+	const person = {
+  	name: ["Bob", "Smith"],
+  	age: 32,
+  	bio: function () {
+    	console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+  		},
+  		introduceSelf: function () {
+    		console.log(`Hi! I'm ${this.name[0]}.`);
+		
+  		},
+	};
+
+
+</script>
+
+
+  
+
+</body>
+<script src="scripts/main.js"></script>
+
+</html>

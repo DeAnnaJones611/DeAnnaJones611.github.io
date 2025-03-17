@@ -53,7 +53,15 @@ function dragstartHandler(ev) {
   
 }
 
-
+	function createCourse(name, pre, des){
+		const obj = {};
+		obj.name = name;
+		obj.pre = pre;
+		obj.des = des;
+		
+		return obj;
+	
+	}
 
 
 
@@ -67,45 +75,32 @@ function dragstartHandler(ev) {
 			
 	const classSectionFour = createCourse("Class Name 4" , ["pre.4_1",  "pre.4_2",  "pre.4_3"], "this is des for 4");
 		//Function to create an object 
-	function createCourse(name, pre, des){
-		const obj = {};
-		obj.name = name;
-		obj.pre = pre;
-		obj.des = des;
-		
-		return obj;
-	
-	}
+
 	const eleDisplayInfo = document.getElementById("displayInfo");	
 	//This gets all the divs
 	
-	 const section1Button = document.getElementById("class1");
-	 	section1Button.addEventListener("click" , displayInfo(classSectionOne));		
-	 
-	 
-	const section2Button = document.getElementById("class2");
-		section2Button.addEventListener("click" , displayInfo(classSectionTwo));	
+	const section1Button = document.getElementById("class1");
+	 section1Button.addEventListener("click" , function(){alert( "Name: " + classSectionOne.name +`\n  Description: ` + classSectionOne.des + "\n Prerquisite: " + classSectionOne.pre);});
 	
-	//const eleSection3 = document.getElementById("section3");
-	//const eleSection4 = document.getElementById("section4");
+	
+		const section2Button = document.getElementById("class2");
+	 section2Button.addEventListener("click" , function(){alert( "Name: " + classSectionTwo.name +`\n  Description: ` + classSectionTwo.des + "\n Prerquisite: " + classSectionTwo.pre);});
+	
+	
+		const section3Button = document.getElementById("class3");
+	 section3Button.addEventListener("click" , function(){alert( "Name: " + classSectionThree.name +`\n  Description: ` + classSectionThree.des + "\n Prerquisite: " + classSectionThree.pre);});
+	
+	
+		const section4Button = document.getElementById("class4");
+	 section4Button.addEventListener("click" , function(){alert( "Name: " + classSectionFour.name +`\n  Description: ` + classSectionFour.des + "\n Prerquisite: " + classSectionFour.pre);});
 	
 
-
-	
-	
-	//eleSection1.addEventListener.click(displayInfo(classSectionOne));
-	
-	//eleSection2.addEventListener("click", displayInfo(classSectionTwo));
-		
-	//eleSection3.addEventListener("click", displayInfo(classSectionThree));
-		
-	//eleSection4.addEventListener("click", displayInfo(classSectionFour));
 
 
 
 	function displayInfo(obj){
 		// This makes the alert of the infromation 
-		
+		console.log("Made it here");
 		
 		eleDisplayInfo.textContent = "Name: " + obj.name +`\n  Description: ` + obj.des + "\n Prerquisite: " + obj.pre;
 	
