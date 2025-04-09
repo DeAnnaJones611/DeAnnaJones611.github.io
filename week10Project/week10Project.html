@@ -238,7 +238,7 @@
 					
 					finalTotal = finalTotal+costOne;
 					
-					finalPricePrint.textContent = finalTotal;
+					finalPricePrint.textContent ="$ "+  finalTotal;
 					
 					
 					oneButton.id = "item1Remove";
@@ -271,7 +271,7 @@
 					
 					finalTotal = finalTotal+costTwo;
 					
-					finalPricePrint.textContent = finalTotal;
+					finalPricePrint.textContent = "$ "+  finalTotal;
 					
 					
 					twoButton.id = "item2Remove";
@@ -303,7 +303,7 @@
 					
 					finalTotal = finalTotal+costThree;
 					
-					finalPricePrint.textContent = finalTotal;
+					finalPricePrint.textContent = "$ "+ finalTotal;
 					
 					
 					threeButton.id = "item3Remove";
@@ -334,7 +334,7 @@
 					
 					finalTotal = finalTotal+costFour;
 					
-					finalPricePrint.textContent = finalTotal;
+					finalPricePrint.textContent = "$ "+  finalTotal;
 					
 					
 					fourButton.id = "item4Remove";
@@ -362,7 +362,7 @@ document.body.addEventListener("click", (event) => {
 			const elementOne = document.getElementById("removeItem1");
 			elementOne.remove();
 			finalTotal = finalTotal-2;
-			finalPricePrint.textContent = finalTotal;
+			finalPricePrint.textContent = "$ "+ finalTotal;
 	}
 	
 	
@@ -370,7 +370,7 @@ document.body.addEventListener("click", (event) => {
 			const elementOne = document.getElementById("removeItem2");
 			elementOne.remove();
 			finalTotal = finalTotal-3.50;
-			finalPricePrint.textContent = finalTotal;
+			finalPricePrint.textContent = "$ "+ finalTotal;
 	}
 	
 	
@@ -378,14 +378,14 @@ document.body.addEventListener("click", (event) => {
 			const elementOne = document.getElementById("removeItem3");
 			elementOne.remove();
 			finalTotal = finalTotal-1.25;
-			finalPricePrint.textContent = finalTotal;
+			finalPricePrint.textContent = "$ "+ finalTotal;
 	}
 	
 		if(event.target.matches("#item4Remove")){
 			const elementOne = document.getElementById("removeItem4");
 			elementOne.remove();
 			finalTotal = finalTotal-2.75;
-			finalPricePrint.textContent = finalTotal;
+			finalPricePrint.textContent = "$ "+ finalTotal;
 	}
 	
 
