@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+	  
+	  #menu{
+		
+	  }
+    </style>
+  </head>
+  <body>
+
+    <h1>Week 10 Project</h1>
+
+
+		
+	<div id = "menu">
+		<div id = "item1">
+		
+		<p> Name </p>
+		<img  id ="imge1" src = "image/IceCream1.png" />
+		<p>Price </p>
+		
+		<button  id = "item1Button"> Add to cart </button>
+		</div>
+		
+		
+		
+	<div id = "item2">
+		
+		<p> Brownie </p>
+		<img  id ="imge2" src = "image/Brownie1.png" />
+		<p>Price: 3.50 </p>
+		
+		<button  id = "item2Button"> Add to cart </button>
+		</div>
+		
+		
+		
+	<div id = "item3">
+		
+		<p> Snow Cone </p>
+		<img  id ="imge3" src = "image/SnowCone1.png" />
+		<p>Price: 1.25</p>
+		
+		<button  id = "item3Button"> Add to cart </button>
+		</div>
+		
+		
+				<div id = "item4">
+		
+		<p> Cookie </p>
+		<img  id ="imge4" src = "image/Cookie1.png" />
+		<p>Price: 2. 75</p>
+		
+		<button  id = "item4Button"> Add to cart </button>
+		</div>
+		
+		
+		
+		
+	
+	</div>
+	
+	
+	
+		
+	<div id = "Result">
+		<div id = "item1">
+		
+		<h1> Summary  </h1>
+		
+		<div id="shoppingCart">
+			
+		</div>
+		
+		<h1>Final Price </h1>
+		
+		<p id="finalPrice"> </p>
+		
+		</div>
+		
+		
+		
+	
+	</div>
+
+ 
+
+		<script>
+		//Added extra 
+		const imagesOne = ["IceCream1.png", "IceCream2.png"];
+		
+		const ImageOne = document.getElementById("imge1");
+		
+		
+		
+		const imagesTwo = ["Brownie1.png", "Brownie2.png"];
+		
+		const ImageTwo = document.getElementById("imge2");
+		
+		
+		
+		const imagesThree = ["SnowCone1.png", "SnowCone2.png"];
+		
+		const ImageThree = document.getElementById("imge3");
+		
+		
+		
+		const imagesFour = ["Cookie1.png", "Cookie2.png"];
+		
+		const ImageFour  = document.getElementById("imge4");
+
+
+		ImageOne.addEventListener("click", (event) => changeImage(ImageOne, imagesOne))
+		
+		
+		ImageTwo.addEventListener("click", (event) => changeImage(ImageTwo, imagesTwo))
+				
+		ImageThree.addEventListener("click", (event) => changeImage(ImageThree, imagesThree))
+						
+		ImageFour.addEventListener("click", (event) => changeImage(ImageFour, imagesFour))
+		
+		function changeImage(image , array){
+			const imageSrc = image.src;
+			
+			const imageArry = imageSrc.split("/");
+			
+			const lastPart = imageArry.length-1
+			
+			
+			const imagePart = imageArry[imageArry.length-1];
+			
+			if (imagePart == array[0]){
+				const newImagePart = array[1];
+				
+				image.src = "image/" + newImagePart;
+			}
+			else{
+				const otherImagePart = array[0];
+				
+				image.src = "image/" + otherImagePart;
+			}
+			
+		}
+		
+		
+		
+		//Gets the items form the screen
+				const addItemOneButton = document.getElementById("item1Button");
+				
+				
+				const addItemTwoButton = document.getElementById("item2Button");
+				
+				
+				
+				const addItemThreeButton = document.getElementById("item3Button");
+				
+				
+				const addItemFourButton = document.getElementById("item4Button");
+				
+				
+				
+				const shoppingCartPrint = document.getElementById("shoppingCart");
+				
+				const finalPricePrint  = document.getElementById("finalPrice");
+				
+				let finalTotal = 0;
+				
+				
+				addItemOneButton.addEventListener("click", addItemOne);
+				
+				addItemTwoButton.addEventListener("click", addItemTwo);
+				
+				addItemThreeButton.addEventListener("click", addItemThree);
+				
+				addItemFourButton.addEventListener("click", addItemFour);
+				
+				
+				
+				function addItemOne(){
+					const costOne= 2;
+					
+					const oneDiv = document.createElement("div");
+					
+					const oneButton = document.createElement("button");
+					
+					const onePara = document.createElement("p");
+					
+					
+					finalTotal = finalTotal+costOne;
+					
+					finalPricePrint.textContent = finalTotal;
+					
+					
+					oneButton.id = "item1Remove";
+					oneButton.textContent = "Remove Item";
+					
+					onePara.textContent = "Ice Cream";
+					
+					
+					oneDiv.id = "removeItem1";
+					
+					oneDiv.appendChild(onePara);
+					oneDiv.appendChild(oneButton);
+					
+					shoppingCartPrint.appendChild(oneDiv);
+				
+				}
+				
+				
+				
+				
+				function addItemTwo(){
+					const costTwo= 3.5;
+					
+					const twoDiv = document.createElement("div");
+					
+					const twoButton = document.createElement("button");
+					
+					const twoPara = document.createElement("p");
+					
+					
+					finalTotal = finalTotal+costTwo;
+					
+					finalPricePrint.textContent = finalTotal;
+					
+					
+					twoButton.id = "item2Remove";
+					twoButton.textContent = "Remove Item";
+					
+					twoPara.textContent = "Brownie";
+					
+					
+					twoDiv.id = "removeItem2";
+					
+					twoDiv.appendChild(twoPara);
+					twoDiv.appendChild(twoButton);
+					
+					shoppingCartPrint.appendChild(twoDiv);
+				
+				}
+				
+				
+								
+				function addItemThree(){
+					const costThree= 1.25;
+					
+					const threeDiv = document.createElement("div");
+					
+					const threeButton = document.createElement("button");
+					
+					const threePara = document.createElement("p");
+					
+					
+					finalTotal = finalTotal+costThree;
+					
+					finalPricePrint.textContent = finalTotal;
+					
+					
+					threeButton.id = "item3Remove";
+					threeButton.textContent = "Remove Item";
+					
+					threePara.textContent = "Snow Cone";
+					
+					
+					threeDiv.id = "removeItem3";
+					
+					threeDiv.appendChild(threePara);
+					threeDiv.appendChild(threeButton);
+					
+					shoppingCartPrint.appendChild(threeDiv);
+				
+				}
+				
+				
+				function addItemFour(){
+					const costFour= 1.25;
+					
+					const fourDiv = document.createElement("div");
+					
+					const fourButton = document.createElement("button");
+					
+					const fourPara = document.createElement("p");
+					
+					
+					finalTotal = finalTotal+costFour;
+					
+					finalPricePrint.textContent = finalTotal;
+					
+					
+					fourButton.id = "item4Remove";
+					fourButton.textContent = "Remove Item";
+					
+					fourPara.textContent = "Cookie";
+					
+					
+					fourDiv.id = "removeItem4";
+					
+					fourDiv.appendChild(fourPara);
+					fourDiv.appendChild(fourButton);
+					
+					shoppingCartPrint.appendChild(fourDiv);
+				
+				}
+				
+				
+				
+				
+				
+
+document.body.addEventListener("click", (event) => {
+	if(event.target.matches("#item1Remove")){
+			const elementOne = document.getElementById("removeItem1");
+			elementOne.remove();
+			finalTotal = finalTotal-2;
+			finalPricePrint.textContent = finalTotal;
+	}
+	
+	
+		if(event.target.matches("#item2Remove")){
+			const elementOne = document.getElementById("removeItem2");
+			elementOne.remove();
+			finalTotal = finalTotal-3.50;
+			finalPricePrint.textContent = finalTotal;
+	}
+	
+	
+		if(event.target.matches("#item3Remove")){
+			const elementOne = document.getElementById("removeItem3");
+			elementOne.remove();
+			finalTotal = finalTotal-1.25;
+			finalPricePrint.textContent = finalTotal;
+	}
+	
+		if(event.target.matches("#item4Remove")){
+			const elementOne = document.getElementById("removeItem4");
+			elementOne.remove();
+			finalTotal = finalTotal-2.75;
+			finalPricePrint.textContent = finalTotal;
+	}
+	
+
+})
+
+
+</script>
+
+
+
+
+  </body>
+</html>
